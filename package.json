@@ -41,7 +41,8 @@
   },
   "peerDependencies": {
     "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "react-dom": ">=16.8.0",
+    "html2canvas": "^1.0.0-rc.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -102,6 +103,7 @@
   },
   "dependencies": {
     "@types/tinycolor2": "^1.4.2",
-    "tinycolor2": "^1.4.2"
+    "tinycolor2": "^1.4.2",
+    "react-eyedrop": "^5.4.2"
   }
 }

@@ -29,6 +29,7 @@ const Gradient: FC<IPropsComp> = ({
   showGradientMode = true,
   showGradientAngle = true,
   showGradientPosition = true,
+  showEyeDrop = true,
   colorBoardHeight = 120,
   defaultColors
 }) => {
@@ -142,6 +143,7 @@ const Gradient: FC<IPropsComp> = ({
       />
       {showInputs && (
         <InputRgba
+          showEyeDrop={showEyeDrop}
           hex={activeColor.hex}
           alpha={activeColor.alpha}
           showAlpha={showAlpha}

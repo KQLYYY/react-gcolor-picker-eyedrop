@@ -18,7 +18,8 @@ const ColorPickerSolid: FC<IPropsComp> = ({
   showAlpha = true,
   showInputs = true,
   colorBoardHeight = 120,
-  defaultColors
+  defaultColors,
+  showEyeDrop
 }) => {
   const node = useRef<HTMLDivElement | null>(null);
 
@@ -69,6 +70,7 @@ const ColorPickerSolid: FC<IPropsComp> = ({
       />
       {showInputs && (
         <InputRgba
+          showEyeDrop={showEyeDrop}
           hex={color.hex}
           alpha={color.alpha}
           format={format}

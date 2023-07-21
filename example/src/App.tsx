@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import ReactGPicker from 'react-gcolor-picker';
+import eyeDropImg from './eyeDropImg.jpeg'
 
 function App() {
   const [color, setColor] = useState('#fff');
@@ -35,10 +36,18 @@ function App() {
       >
         <ReactGPicker
           value={color}
-          format='rgb'
+          format='hex'
           gradient={true}
           onChange={onChange}
+          showEyeDrop={true}
+          showGradientMode={false}
         />
+      </div>
+      <div >
+        <img  
+          style={{width:300, height:300}}
+          src={eyeDropImg}
+          alt="eyeDropImg"></img>
       </div>
     </>
   );

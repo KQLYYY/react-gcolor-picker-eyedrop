@@ -56,6 +56,7 @@ const ColorPicker: FC<IPropsMain> = ({
   showGradientMode = true,
   showGradientAngle = true,
   showGradientPosition = true,
+  showEyeDrop = true,
   popupWidth = 267,
   colorBoardHeight = 120,
   defaultColors = DEFAULT_COLORS,
@@ -110,6 +111,7 @@ const ColorPicker: FC<IPropsMain> = ({
               debounce={debounce}
               showAlpha={showAlpha}
               showInputs={showInputs}
+              showEyeDrop={showEyeDrop}
               colorBoardHeight={colorBoardHeight}
             />
           </PopupTabsBodyItem>
@@ -128,6 +130,7 @@ const ColorPicker: FC<IPropsMain> = ({
               showGradientMode={showGradientMode}
               showGradientAngle={showGradientAngle}
               showGradientPosition={showGradientPosition}
+              showEyeDrop={showEyeDrop}
               colorBoardHeight={colorBoardHeight}
             />
           </PopupTabsBodyItem>
@@ -152,6 +155,7 @@ const ColorPicker: FC<IPropsMain> = ({
                 showAlpha={showAlpha}
                 showInputs={showInputs}
                 colorBoardHeight={colorBoardHeight}
+                showEyeDrop={showEyeDrop}
               />
             ) : (
               <Fragment />
@@ -171,6 +175,7 @@ const ColorPicker: FC<IPropsMain> = ({
                 showGradientMode={showGradientMode}
                 showGradientAngle={showGradientAngle}
                 showGradientPosition={showGradientPosition}
+                showEyeDrop={showEyeDrop}
                 colorBoardHeight={colorBoardHeight}
               />
             ) : (

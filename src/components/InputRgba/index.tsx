@@ -2,8 +2,10 @@ import React, { FC, useEffect, useState } from 'react';
 import tinycolor from 'tinycolor2';
 import './_input_rgba.scss';
 
+import { useEyeDrop } from 'react-eyedrop';
 import { checkFormat } from '../../utils';
 import { getAlphaValue, inputsData, handlePressEnter } from './helpers';
+import { EyeDropIcon } from './EyeDropIcon';
 
 interface IChange {
   hex: string;
@@ -17,6 +19,7 @@ type TProps = {
   showAlpha?: boolean;
   onChange: ({ hex, alpha }: IChange) => void;
   onSubmitChange?: (rgba: string) => void;
+  showEyeDrop?: boolean;
 };
 
 const InputRgba: FC<TProps> = ({
@@ -25,7 +28,8 @@ const InputRgba: FC<TProps> = ({
   format = 'rgb',
   showAlpha = true,
   onChange,
-  onSubmitChange
+  onSubmitChange,
+  showEyeDrop
 }) => {
   const [color, setColor] = useState({
     alpha,
@@ -89,6 +93,23 @@ const InputRgba: FC<TProps> = ({
     showAlpha
   };
 
+  const [colors, pickColor] = useEyeDrop({
+    once: true
+  });
+
+  useEffect(() => {
+    if (onSubmitChange) {
+      const rgba = tinycolor(colors.hex);
+      rgba.setAlpha(Number(color.alpha) / 100);
+
+      onSubmitChange(
+        checkFormat(rgba.toRgbString(), format, showAlpha, color.alpha)
+      );
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [colors]);
+
   return (
     <div className='input_rgba'>
       <div className='input_rgba-wrap'>
@@ -129,6 +150,14 @@ const InputRgba: FC<TProps> = ({
             </div>
           );
         })}
+        {showEyeDrop ? (
+          <button
+            className='input_rgba-wrap input_rgba-eyedrop'
+            onClick={pickColor}
+          >
+            <EyeDropIcon />
+          </button>
+        ) : null}
       </div>
     </div>
   );

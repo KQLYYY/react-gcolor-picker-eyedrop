@@ -132,6 +132,9 @@ const Gradient: FC<IPropsComp> = ({
     onChangeActiveColor({ hex, alpha: rgbaArr[3] * 100 });
   };
 
+  const handleOnEyeDropClick = () =>
+    onEyeDropClick?.(Number(activeColor.index));
+
   return (
     <div className='colorpicker'>
       <ColorPanel
@@ -143,7 +146,7 @@ const Gradient: FC<IPropsComp> = ({
       />
       {showInputs && (
         <InputRgba
-          onEyeDropClick={() => onEyeDropClick?.(Number(activeColor.index))}
+          onEyeDropClick={onEyeDropClick ? handleOnEyeDropClick : undefined}
           hex={activeColor.hex}
           alpha={activeColor.alpha}
           showAlpha={showAlpha}

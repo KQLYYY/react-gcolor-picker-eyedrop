@@ -29,8 +29,8 @@ const Gradient: FC<IPropsComp> = ({
   showGradientMode = true,
   showGradientAngle = true,
   showGradientPosition = true,
-  showEyeDrop = true,
   colorBoardHeight = 120,
+  onEyeDropClick,
   defaultColors
 }) => {
   const parsedColors = useCallback(() => {
@@ -143,7 +143,7 @@ const Gradient: FC<IPropsComp> = ({
       />
       {showInputs && (
         <InputRgba
-          showEyeDrop={showEyeDrop}
+          onEyeDropClick={() => onEyeDropClick?.(Number(activeColor.index))}
           hex={activeColor.hex}
           alpha={activeColor.alpha}
           showAlpha={showAlpha}

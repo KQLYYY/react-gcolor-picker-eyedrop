@@ -9,6 +9,11 @@ function App() {
     setColor(value);
   };
 
+  const onEyeDropClick = (activeColorIndex?: number) =>{
+    console.log('onEyeDropClick')
+    console.log('activeColorIndex', activeColorIndex)
+  }
+
   return (
     <>
       <div
@@ -39,7 +44,7 @@ function App() {
           format='hex'
           gradient={true}
           onChange={onChange}
-          showEyeDrop={true}
+          onEyeDropClick={onEyeDropClick}
           showGradientMode={false}
         />
       </div>

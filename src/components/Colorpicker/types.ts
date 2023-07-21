@@ -12,7 +12,7 @@ export interface IPropsComp {
   showGradientMode?: boolean;
   showGradientAngle?: boolean;
   showGradientPosition?: boolean;
-  showEyeDrop?: boolean;
+  onEyeDropClick?: (index?: number) => void;
   colorBoardHeight?: number;
   defaultColors?: string[];
   defaultActiveTab?: string | undefined;

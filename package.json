@@ -103,7 +103,6 @@
   },
   "dependencies": {
     "@types/tinycolor2": "^1.4.2",
-    "tinycolor2": "^1.4.2",
-    "react-eyedrop": "^5.4.2"
+    "tinycolor2": "^1.4.2"
   }
 }
